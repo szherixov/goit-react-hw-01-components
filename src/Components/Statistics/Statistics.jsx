@@ -17,7 +17,13 @@ import styles from './StatisticsItem.module.css';
 export default Statistics;
 
 Statistics.propTypes = {
-    title: PropTypes.string,
-    id: PropTypes.string.isRequired,
-
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }),
+    
+  ).isRequired
 }

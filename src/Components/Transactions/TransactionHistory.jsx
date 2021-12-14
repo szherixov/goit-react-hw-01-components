@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './transactions.module.css'
 
 function Transactions({items}) {
@@ -23,3 +24,14 @@ function Transactions({items}) {
     }
 
 export default Transactions;
+
+Transactions.propTypes = {
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        amount: PropTypes.string.isRequired,
+        currency: PropTypes.string.isRequired,
+      }),
+    ),
+  };
